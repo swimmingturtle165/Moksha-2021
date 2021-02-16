@@ -5,6 +5,7 @@ body {
     background-position: center;
     background-attachment: inherit;
 	background-size: 100%;
+	margin: 2rem 2rem 2rem 2rem;
 -webkit-font-smoothing:antialiased;
 }
 
@@ -276,7 +277,7 @@ p{font-size:1em;line-height: 1.7em; margin-bottom: 1.7em;}
 	.partners img{margin: 0 15px 25px 0;width: 157px;}
 	.services ul li{width: 9em;height: 9em;}
 	figure.effect-chico figcaption {padding: 2em;}	
-	figure.effect-oscar figcaption {padding: 20%;}
+	figure.effect-oscar figcaption {padding: 0%;}
 	figure.effect-chico figcaption::before{top: 10px;right: 10px;bottom: 10px;left: 10px;}
 	.grid figure.effect-chico p{font-size: 0.6em;line-height: 1.5em;}	
 }

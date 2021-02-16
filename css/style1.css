@@ -27,6 +27,16 @@ Author URI: http://www.AetherThemes.com
 
 /* =Common Styles
 -------------------------------------------------------------- */
+.ground {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 3;
+    height: 7.5rem;
+    width: 100%;
+    background: #493442 url(https://is.gd/Tv0ZyT) repeat bottom right;
+}
+
 body {
 	background: #f6f6f6;
 	color: #777777;
