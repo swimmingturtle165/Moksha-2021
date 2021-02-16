@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css?family=Amaranth|Dancing+Script");
+.container-for-pronite-container {
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.pronite-container {
+    margin: 0;
+    padding: 0;
+    /*height: 100%;*/
+}
+
+.pronite-container * {
+    box-sizing: content-box;
+}
+
+.container-for-pronite-container {
+    background: #43cea2;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #43cea2, #185a9d);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #43cea2, #185a9d);
+     /*W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+*/
+    font-family: 'Dancing Script', cursive;
+}
+
+.pronite-container .heading {
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+    font-family: 'Amaranth', sans-serif;
+}
+.pronite-container .card {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 50px 20px 0;
+}
+.pronite-container .card__item {
+    width: 250px;
+    height:300px;
+    margin: 10px 20px;
+}
+.pronite-container .card__item-title {
+    text-align: center;
+    color: #fff;
+    font-weight: normal;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+.pronite-container .atvImg {
+    border-radius: 5px;
+    transform-style: preserve-3d;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: 300px;
+    display: inline-block;
+}
+.pronite-container .atvImg img {
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(14, 21, 47, 0.25);
+}
+.pronite-container .atvImg-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    transition: all 0.2s ease-out;
+}
+.pronite-container .atvImg-container.over .atvImg-shadow {
+    box-shadow: 0 45px 100px rgba(14, 21, 47, 0.4), 0 16px 40px rgba(14, 21, 47, 0.4);
+}
+.pronite-container .atvImg-layers {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+}
+.pronite-container .atvImg-rendered-layer {
+    position: absolute;
+    width: 104%;
+    height: 104%;
+    top: -2%;
+    left: -2%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    background-size: cover;
+    transition: all 0.1s ease-out;
+}
+.pronite-container .atvImg-shadow {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    transition: all 0.2s ease-out;
+    box-shadow: 0 8px 30px rgba(14, 21, 47, 0.6);
+}
+.pronite-container .atvImg-shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 5px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 60%);
+}

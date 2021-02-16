@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moksha'20 - Events</title>
+    <link rel="stylesheet" href="./css/events-page.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Thank You For Registering</h4>
+            </div>
+            <div class="modal-body">
+                <p>We have received your registration and your contact details have been forwarded to the organising team, they will reach out to you after filtering all responses.
+                    <br>Meanwhile, do check out other exciting events and pronites at Moksha 2020!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class='container'>
+    <img src="./images/moksha-20-redpink.png" style="display: block; margin: 20px; auto; height: 100px; width:auto;">
+    <div class="portfolioFilter">
+        <div style="font-size: 1.4rem; margin-bottom:15px;" >Explore Events</div>
+        <ul class='sort-nav'>
+            <li>
+                <a href="#" data-filter="*" class="current">All Categories</a>
+            </li>
+            <li>
+                <a href="#" data-filter=".literature">Literature Events</a>
+            </li>
+            <li>
+                <a href="#" data-filter=".dance">Dance Events</a>
+            </li>
+            <li>
+                <a href="#" data-filter=".drama">Drama Events</a>
+            </li>
+            <li>
+                <a href="#" data-filter=".music">Music Events</a>
+            </li>
+            <li>
+                <a href="#" data-filter=".misc">Misc Events</a>
+            </li>
+        </ul>
+    </div>
+
+    <div style='clear: both;'></div>
+
+    <div class="portfolioContainer">
+
+        <div class="individual">
+            <div class='z-hovr'>
+                <img src="https://fpoimg.com/400x400" alt="image">
+                <div class="z2-client">
+                    <h2>The Inside<br>Coup</h2>
+                    <a class="showoverlay see_btn" href="#popup1">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- popups -->
+    <!-- Inside coup -->
+    <div class="popups">
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/1.5.25/jquery.isotope.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="./js/waitforimages.js"></script>
+    <script>
+        $(window).load(function(){
+        function displayEvents (json) {
+            var sheetData = json.feed.entry.filter(cellObj => cellObj.gs$cell.row!== "1");
+            var structured_data = [];
+            var ids = sheetData.filter(cellObj => cellObj.gs$cell.col=== "1");
+            var event_names = sheetData.filter(cellObj => cellObj.gs$cell.col=== "2");
+            var image_link = sheetData.filter(cellObj => cellObj.gs$cell.col=== "3");
+            var description = sheetData.filter(cellObj => cellObj.gs$cell.col=== "4");
+            var organiser = sheetData.filter(cellObj => cellObj.gs$cell.col=== "5");
+            var day = sheetData.filter(cellObj => cellObj.gs$cell.col=== "6");
+            var location = sheetData.filter(cellObj => cellObj.gs$cell.col=== "7");
+            var timing = sheetData.filter(cellObj => cellObj.gs$cell.col=== "8");
+            var event_class = sheetData.filter(cellObj => cellObj.gs$cell.col=== "9");
+            var poc_name = sheetData.filter(cellObj => cellObj.gs$cell.col=== "10");
+            var poc_phone = sheetData.filter(cellObj => cellObj.gs$cell.col=== "11");
+            for (var i = 0; i < ids.length; i++) {
+                structured_data.push({
+                    id: ids[i].content.$t,
+                    name: event_names[i].content.$t,
+                    image_link: image_link[i].content.$t,
+                    description: description[i].content.$t,
+                    organiser: organiser[i].content.$t,
+                    day: day[i].content.$t,
+                    location: location[i].content.$t,
+                    timing: timing[i].content.$t,
+                    class: event_class[i].content.$t,
+                    poc_name: poc_name[i].content.$t,
+                    poc_phone: poc_phone[i].content.$t
+                });
+            }
+            window.structured_data = structured_data;
+            var htmlcode = structured_data.map(item => `
+            <div class="${item.class}">
+                <div class='z-hovr'>
+                    <img src="${item.image_link}" alt="image">
+                    <div class="z2-client">
+                        <h2 style="margin-bottom: 0">${item.name}</h2>
+                        <h2 style="margin-top: 0">Day ${item.day}, ${item.location}</h2>
+                        <a class="showoverlay see_btn" href="#popup${item.id}">View More</a>
+                    </div>
+                </div>
+            </div>
+
+            `).join(" ");
+            console.log(structured_data);
+            // $('#eventOptions').html = htmlcode;
+            var queryString = window.location.search;
+            var urlParams = new URLSearchParams(queryString);
+            var thankyou = urlParams.get("thankyou");
+            if (thankyou) {
+                $('#myModal').modal();
+            }
+
+            document.getElementsByClassName('portfolioContainer')[0].innerHTML = htmlcode;
+            var html_eventPopups = structured_data.map(item =>`<div id="popup${item.id}" class="overlay">
+            <div class="popup">
+                <a class="close" href="#">&times;</a>
+                <div class='row content'>
+                    <!-- Slider -->
+                    <div class='col-md-6'>
+                        <div id="carousel-example" class="carousel slide" data-ride="carousel">
+                            <!--<ol class="carousel-indicators">-->
+                                <!--<li data-target="#carousel-example" data-slide-to="0" class="active"></li>-->
+                            <!--</ol>-->
+
+                            <div class="carousel-inner">
+
+                                <div class="item active" style="display:flex; align-items:center; justify-content:center">
+                                    <a href="#"><img src="${item.image_link}" alt="" /></a>
+                                </div>
+                            </div>
+
+                            <!--<a class="left carousel-control" href="#carousel-example" data-slide="prev">-->
+                                <!--<span class="glyphicon glyphicon-chevron-left"></span>-->
+                            <!--</a>-->
+                            <!--<a class="right carousel-control" href="#carousel-example" data-slide="next">-->
+                                <!--<span class="glyphicon glyphicon-chevron-right"></span>-->
+                            <!--</a>-->
+                        </div>
+                    </div>
+                    <!-- Client description -->
+                    <div class='col-md-6 client-desc'>
+                        <h2>${item.name}</h2>
+                        <div>
+                            ${item.description}
+                        </div>
+                        <!-- Services list -->
+                        <h3>Organisers</h3>
+                        This event has been organised by ${item.organiser}. Use the information below to contact them.
+                        <h5>Name: ${item.poc_name}</h5>
+                        <h5>Contact Number: ${item.poc_phone}</h5>
+                        <!--  Buttons -->
+                        <div class='popup-btns'>
+                            <a href="/register.html" class="pop-btn orng">Register Now!</a>
+                            <p>While registering, select the event name ${item.name} from the dropdown.</p>
+                        </div>
+                        <!-- Testimonial -->
+
+                    </div>
+                </div>
+            </div>
+        </div>`).join(" ")
+            document.getElementsByClassName('popups')[0].innerHTML = html_eventPopups;
+            var $container = $('.portfolioContainer');
+            $container.isotope({
+                filter: '*',
+                animationOptions: {
+                    duration: 750,
+                    easing: 'linear',
+                    queue: false
+                }
+            });
+
+
+            var category = urlParams.get("category");
+            if (category) {
+                $('.portfolioFilter .current').removeClass('current');
+                $(this).addClass('current');
+
+                var selector = "." + category;
+                $container.isotope({
+                    filter: selector,
+                    animationOptions: {
+                        duration: 750,
+                        easing: 'linear',
+                        queue: false
+                    }
+                });
+            }
+
+            $('.portfolioFilter a').click(function(){
+                $('.portfolioFilter .current').removeClass('current');
+                $(this).addClass('current');
+
+                var selector = $(this).attr('data-filter');
+                $container.isotope({
+                    filter: selector,
+                    animationOptions: {
+                        duration: 750,
+                        easing: 'linear',
+                        queue: false
+                    }
+                });
+                return false;
+            });
+
+            $('.portfolioContainer').waitForImages(function() {
+                    $('.portfolioContainer').isotope('reLayout')
+                });
+            setTimeout(() => $('.portfolioContainer').isotope('reLayout'), 1000);
+        }
+        fetch("https://spreadsheets.google.com/feeds/cells/1erNs5isd8bJZRD5cSkwI1HSgsCLYubKivq42TUXTirg/1/public/full?alt=json")
+            .then(data => data.json())
+            .then(displayEvents);
+
+        });
+    </script>
+</div>
+</body>
+</html>

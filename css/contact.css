@@ -1,0 +1,776 @@
+@keyframes background-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@-webkit-keyframes background-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@keyframes eyes-animation {
+    0% {
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -o-transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-0.05rem);
+        -webkit-transform: translateX(-0.05rem);
+        -moz-transform: translateX(-0.05rem);
+        -o-transform: translateX(-0.05rem);
+    }
+    100% {
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -o-transform: translateX(0);
+    }
+}
+@-webkit-keyframes eyes-animation {
+    0% {
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -o-transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-0.05rem);
+        -webkit-transform: translateX(-0.05rem);
+        -moz-transform: translateX(-0.05rem);
+        -o-transform: translateX(-0.05rem);
+    }
+    100% {
+        transform: translateX(0);
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        -o-transform: translateX(0);
+    }
+}
+@keyframes mouth-animation {
+    0% {
+        height: 1.5rem;
+    }
+    50% {
+        height: 0.8rem;
+    }
+    100% {
+        height: 1.5rem;
+    }
+}
+.contact {
+    background: linear-gradient(45deg, #d04560, #1f96bb);
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    /*overflow-x: none;*/
+}
+
+ul {
+    list-style: none;
+}
+
+.social-handles {
+    margin-top: 5rem;
+}
+.social-handles .name {
+    color: white;
+    font-family: monospace;
+    text-align: center;
+    font-size: 1.5rem;
+    filter: drop-shadow(2px 2px 3px black);
+    border-bottom: 1px solid;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+.social-handles .buttons {
+    max-width: 20rem;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+.social-handles .buttons .social-button {
+    background-image: linear-gradient(45deg, rgba(35, 104, 176, 0.5), rgba(100, 18, 194, 0.5));
+    border-radius: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0.3rem;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5);
+}
+.social-handles .buttons .social-button .fab {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.contact .contact-details {
+    min-width: 400px;
+    width: 60%;
+}
+.contact .contact-details input, .contact .contact-details textarea {
+    border: 1px solid white;
+    border-radius: 5%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 1.5%;
+}
+.contact .contact-details input {
+    height: 2rem;
+}
+.contact .contact-details input::placeholder, .contact .contact-details textarea::placeholder {
+    color: white;
+    font-size: 1.2em;
+    font-style: italic;
+}
+.contact .contact-details h3 {
+    color: #fff;
+    font-size: 4rem;
+    padding-left: 3%;
+}
+.contact .contact-details .email-text {
+    color: #fff;
+    font-size: 1.3rem;
+    padding-left: 3%;
+    line-height: 1.8rem;
+}
+.contact .contact-details .form-horizontal {
+    float: left;
+    width: 400px;
+    font-family: 'Lato';
+    font-weight: 400;
+}
+.contact .contact-details .form-control, .contact .contact-details textarea {
+    width: 400px;
+    background-color: transparent;
+    color: #fff;
+    letter-spacing: 1px;
+}
+.contact .contact-details .send-button {
+    margin-top: 15px;
+    height: 34px;
+    width: 400px;
+    overflow: hidden;
+    transition: all .2s ease-in-out;
+}
+.contact .contact-details .social-button {
+    width: 400px;
+    height: 34px;
+    transition: all .2s ease-in-out;
+}
+.contact .contact-details .send-text {
+    display: block;
+    margin-top: 10px;
+    font: 300 14px 'Lato', sans-serif;
+    letter-spacing: 2px;
+}
+.contact .contact-details .social-button:hover {
+    transform: translate3d(0px, -29px, 0px);
+}
+.contact .candy-wrapper {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contact .candy-wrapper .container {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 20rem;
+    position: relative;
+    background-color: white;
+    box-shadow: 1px 1px 14px 3px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+    margin-top: 2rem;
+}
+.contact .candy-wrapper .container:before {
+    content: '';
+    background-image: linear-gradient(45deg, #e88caf, #70a9f8);
+    background-size: 200% 200%;
+    animation: background-animation 5s ease infinite;
+    -webkit-animation: background-animation 5s ease infinite;
+    -moz-animation: background-animation 5s ease infinite;
+    -o-animation: background-animation 5s ease infinite;
+    width: 19rem;
+    height: 19rem;
+    border-radius: 19rem;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+}
+
+.contact section:nth-child(2) div:nth-child(1) ul li {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6.7rem 1.5rem 0 1.5rem;
+    position: absolute;
+    border-color: #c9804d transparent transparent transparent;
+    top: 10.5rem;
+    left: 4rem;
+    transform: rotate(9deg);
+    filter: drop-shadow(1px 0px 0px #9d5a2b);
+    z-index: 2;
+}
+
+.contact section:nth-child(1) div:nth-child(1) ul li {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6.7rem 1.5rem 0 1.5rem;
+    position: absolute;
+    border-color: #c9804d transparent transparent transparent;
+    top: 10.8rem;
+    left: 12.8rem;
+    transform: rotate(-11deg);
+    filter: drop-shadow(1px 0px 0px #9d5a2b);
+    z-index: 2;
+}
+
+.contact section:nth-child(2) div:nth-child(2) {
+    width: 10rem;
+    height: 11rem;
+    position: absolute;
+    top: 3rem;
+    left: 1rem;
+    z-index: 3;
+}
+.contact section:nth-child(2) div:nth-child(2) ul li:nth-child(1) {
+    width: 4rem;
+    height: 4rem;
+    left: 4rem;
+    top: .2rem;
+    background-color: #f44ea2;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(0);
+    box-shadow: inset -1px 4px #c6327d;
+}
+.contact section:nth-child(2) div:nth-child(2) ul li:nth-child(2) {
+    width: 3.3rem;
+    height: 3rem;
+    left: 6rem;
+    top: 1.5rem;
+    background-color: #f44ea2;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(0);
+    box-shadow: inset -3px 1px #c6327d;
+}
+.contact section:nth-child(2) div:nth-child(2) ul li:nth-child(3) {
+    width: 2.7rem;
+    height: 3.1rem;
+    left: 7.4rem;
+    top: 3.4rem;
+    background-color: #f44ea2;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(-17deg);
+    box-shadow: inset -3px -1px #c6327d;
+}
+.contact section:nth-child(2) div:nth-child(2) ul li:nth-child(4) {
+    width: 2.3rem;
+    height: 3.1rem;
+    left: 7.4rem;
+    top: 5rem;
+    background-color: #f44ea2;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(-17deg);
+    box-shadow: inset 0 -3px #c6327d;
+}
+.contact section:nth-child(2) div:nth-child(2) ul li:nth-child(5) {
+    width: 1.5rem;
+    height: 2.1rem;
+    left: 7.4rem;
+    top: 7rem;
+    background-color: #f44ea2;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(-17deg);
+    box-shadow: inset 0 -3px #c6327d;
+}
+.contact section:nth-child(2) div:nth-child(2) ul li:nth-child(6) {
+    width: 1.8rem;
+    height: 2.1rem;
+    left: 6.4rem;
+    top: 8rem;
+    background-color: #f44ea2;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(-17deg);
+    box-shadow: inset 0 -3px #c6327d;
+}
+.contact section:nth-child(2) div:nth-child(2) ul li:nth-child(7) {
+    width: 1.8rem;
+    height: 2.1rem;
+    left: 5.7rem;
+    top: 8.5rem;
+    background-color: #f44ea2;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(-17deg);
+    box-shadow: inset 2px -3px #c6327d;
+}
+.contact section:nth-child(2) div:nth-child(2) ul li:nth-child(8) {
+    width: 2.4rem;
+    height: 2.1rem;
+    left: 4.5rem;
+    top: 8.6rem;
+    background-color: #f44ea2;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(-17deg);
+    box-shadow: inset 3px -1px #c6327d;
+}
+.contact section:nth-child(2) div:nth-child(2) ul li:nth-child(9) {
+    width: 3.2rem;
+    height: 2.6rem;
+    left: 2.4rem;
+    top: 7.8rem;
+    background-color: #f44ea2;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(4deg);
+    box-shadow: inset 3px -2px #c6327d;
+}
+.contact section:nth-child(2) div:nth-child(2) ul li:nth-child(10) {
+    width: 1.8rem;
+    height: 1.7rem;
+    left: 1.4rem;
+    top: 7.8rem;
+    background-color: #f44ea2;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(4deg);
+    box-shadow: inset 3px -2px #c6327d;
+}
+.contact section:nth-child(2) div:nth-child(2) ul li:nth-child(11) {
+    width: 1.1rem;
+    height: 1.5rem;
+    left: 1rem;
+    top: 6.6rem;
+    background-color: #f44ea2;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(4deg);
+    box-shadow: inset 3px -1px #c6327d;
+}
+.contact section:nth-child(2) div:nth-child(2) ul li:nth-child(12) {
+    width: 2rem;
+    height: 2.2rem;
+    left: .7rem;
+    top: 5rem;
+    background-color: #f44ea2;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(4deg);
+    box-shadow: inset 3px -1px #c6327d;
+}
+.contact section:nth-child(2) div:nth-child(2) ul li:nth-child(13) {
+    width: 3rem;
+    height: 3.2rem;
+    left: .9rem;
+    top: 2.6rem;
+    background-color: #f44ea2;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(26deg);
+    box-shadow: inset 3px 2px #c6327d;
+}
+.contact section:nth-child(2) div:nth-child(2) ul li:nth-child(14) {
+    width: 3rem;
+    height: 2.2rem;
+    left: 2.4rem;
+    top: 1.4rem;
+    background-color: #f44ea2;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(26deg);
+    box-shadow: inset 3px 1px #c6327d;
+}
+.contact section:nth-child(2) div:nth-child(2) ul li:nth-child(15) {
+    width: 7.7rem;
+    height: 7.4rem;
+    background-color: #f44ea2;
+    position: absolute;
+    border-radius: 4rem;
+    left: 1.5rem;
+    top: 2.2rem;
+}
+
+.contact section:nth-child(1) div:nth-child(2) {
+    width: 10rem;
+    height: 11rem;
+    position: absolute;
+    top: 3.3rem;
+    left: 7.6rem;
+    transform: rotate(-25deg);
+    z-index: 9;
+}
+.contact section:nth-child(1) div:nth-child(2) ul li:nth-child(1) {
+    width: 4rem;
+    height: 4rem;
+    left: 4rem;
+    top: .2rem;
+    background-color: #449bf4;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(0);
+    box-shadow: inset -1px 4px #2368b0;
+}
+.contact section:nth-child(1) div:nth-child(2) ul li:nth-child(2) {
+    width: 3.3rem;
+    height: 3rem;
+    left: 6rem;
+    top: 1.5rem;
+    background-color: #449bf4;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(0);
+    box-shadow: inset -3px 1px #2368b0;
+}
+.contact section:nth-child(1) div:nth-child(2) ul li:nth-child(3) {
+    width: 2.7rem;
+    height: 3.1rem;
+    left: 7.4rem;
+    top: 3.4rem;
+    background-color: #449bf4;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(-17deg);
+    box-shadow: inset -3px -1px #2368b0;
+}
+.contact section:nth-child(1) div:nth-child(2) ul li:nth-child(4) {
+    width: 2.3rem;
+    height: 3.1rem;
+    left: 7.4rem;
+    top: 5rem;
+    background-color: #449bf4;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(-17deg);
+    box-shadow: inset 0 -3px #2368b0;
+}
+.contact section:nth-child(1) div:nth-child(2) ul li:nth-child(5) {
+    width: 1.5rem;
+    height: 2.1rem;
+    left: 7.4rem;
+    top: 7rem;
+    background-color: #449bf4;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(-17deg);
+    box-shadow: inset 0 -3px #2368b0;
+}
+.contact section:nth-child(1) div:nth-child(2) ul li:nth-child(6) {
+    width: 1.8rem;
+    height: 2.1rem;
+    left: 6.4rem;
+    top: 8rem;
+    background-color: #449bf4;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(-17deg);
+    box-shadow: inset 0 -3px #2368b0;
+}
+.contact section:nth-child(1) div:nth-child(2) ul li:nth-child(7) {
+    width: 1.8rem;
+    height: 2.1rem;
+    left: 5.7rem;
+    top: 8.5rem;
+    background-color: #449bf4;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(-17deg);
+    box-shadow: inset 2px -3px #2368b0;
+}
+.contact section:nth-child(1) div:nth-child(2) ul li:nth-child(8) {
+    width: 2.4rem;
+    height: 2.1rem;
+    left: 4.5rem;
+    top: 8.6rem;
+    background-color: #449bf4;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(-17deg);
+    box-shadow: inset 3px -1px #2368b0;
+}
+.contact section:nth-child(1) div:nth-child(2) ul li:nth-child(9) {
+    width: 3.2rem;
+    height: 2.6rem;
+    left: 2.4rem;
+    top: 7.8rem;
+    background-color: #449bf4;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(4deg);
+    box-shadow: inset 3px -2px #2368b0;
+}
+.contact section:nth-child(1) div:nth-child(2) ul li:nth-child(10) {
+    width: 1.8rem;
+    height: 1.7rem;
+    left: 1.4rem;
+    top: 7.8rem;
+    background-color: #449bf4;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(4deg);
+    box-shadow: inset 3px -2px #2368b0;
+}
+.contact section:nth-child(1) div:nth-child(2) ul li:nth-child(11) {
+    width: 1.1rem;
+    height: 1.5rem;
+    left: 1rem;
+    top: 6.6rem;
+    background-color: #449bf4;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(4deg);
+    box-shadow: inset 3px -1px #2368b0;
+}
+.contact section:nth-child(1) div:nth-child(2) ul li:nth-child(12) {
+    width: 2rem;
+    height: 2.2rem;
+    left: .7rem;
+    top: 5rem;
+    background-color: #449bf4;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(4deg);
+    box-shadow: inset 3px -1px #2368b0;
+}
+.contact section:nth-child(1) div:nth-child(2) ul li:nth-child(13) {
+    width: 3rem;
+    height: 3.2rem;
+    left: .9rem;
+    top: 2.6rem;
+    background-color: #449bf4;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(26deg);
+    box-shadow: inset 3px 2px #2368b0;
+}
+.contact section:nth-child(1) div:nth-child(2) ul li:nth-child(14) {
+    width: 3rem;
+    height: 2.2rem;
+    left: 2.4rem;
+    top: 1.4rem;
+    background-color: #449bf4;
+    position: absolute;
+    border-radius: 2rem;
+    transform: rotate(26deg);
+    box-shadow: inset 3px 1px #2368b0;
+}
+.contact section:nth-child(1) div:nth-child(2) ul li:nth-child(15) {
+    width: 7.7rem;
+    height: 7.4rem;
+    background-color: #449bf4;
+    position: absolute;
+    border-radius: 4rem;
+    left: 1.5rem;
+    top: 2.2rem;
+}
+
+.contact section:nth-child(2) div:nth-child(3) {
+    width: 6rem;
+    height: 6rem;
+    position: absolute;
+    top: 8rem;
+    z-index: 4;
+}
+.contact section:nth-child(2) div:nth-child(3) ul li:nth-child(1) {
+    left: 3.4rem;
+    top: 0.7rem;
+    width: 2.1rem;
+    height: 2.2rem;
+    border-radius: 2rem;
+    background-color: #1f96bb;
+    position: absolute;
+    overflow: hidden;
+}
+.contact section:nth-child(2) div:nth-child(3) ul li:nth-child(1) div {
+    width: 2.2rem;
+    height: 2rem;
+    background-color: black;
+    border-radius: 2rem;
+    left: 0;
+    top: -.2rem;
+}
+.contact section:nth-child(2) div:nth-child(3) ul li:nth-child(1) div:after {
+    content: '';
+    width: 0.4rem;
+    height: 0.4rem;
+    position: absolute;
+    animation: eyes-animation .5s infinite;
+    -webkit-animation: eyes-animation .5s infinite;
+    -moz-animation: eyes-animation .5s infinite;
+    -o-animation: eyes-animation .5s infinite;
+    background-color: #fff;
+    border-radius: 1rem;
+    left: 0.6rem;
+    top: 0.7rem;
+    box-shadow: 11px 7px white;
+}
+.contact section:nth-child(2) div:nth-child(3) ul li:nth-child(2) {
+    width: 2.1rem;
+    height: 2.2rem;
+    border-radius: 2rem;
+    background-color: #1f96bb;
+    position: absolute;
+    left: 7.1rem;
+    top: 1.1rem;
+    overflow: hidden;
+}
+.contact section:nth-child(2) div:nth-child(3) ul li:nth-child(2) div {
+    width: 2.2rem;
+    height: 2rem;
+    background-color: black;
+    border-radius: 2rem;
+    left: 0;
+    top: -.2rem;
+}
+.contact section:nth-child(2) div:nth-child(3) ul li:nth-child(2) div:after {
+    content: '';
+    width: 0.4rem;
+    height: 0.4rem;
+    position: absolute;
+    animation: eyes-animation .5s infinite;
+    background-color: #fff;
+    border-radius: 1rem;
+    left: 0.6rem;
+    top: 0.7rem;
+    box-shadow: 11px 7px white;
+}
+.contact section:nth-child(2) div:nth-child(3) ul:after {
+    content: '';
+    width: 0.6rem;
+    background-color: transparent;
+    border-bottom: 2px solid black;
+    position: absolute;
+    top: 1.1rem;
+    left: 3rem;
+    border-radius: .2rem;
+    transform: rotate(31deg) skew(-22deg, 10deg);
+    box-shadow: 0px -5px 0px black;
+}
+.contact section:nth-child(2) div:nth-child(3) ul:before {
+    content: '';
+    width: 0.6rem;
+    background-color: transparent;
+    border-bottom: 2px solid black;
+    position: absolute;
+    top: 2rem;
+    left: 8.9rem;
+    border-radius: .2rem;
+    transform: rotate(-23deg) skew(-22deg, 10deg);
+    box-shadow: 0px -5px 0px black;
+}
+
+.contact section:nth-child(1) div:nth-child(3) ul:after {
+    content: '';
+    width: 7rem;
+    height: 0.9rem;
+    background-color: #449bf4;
+    top: 10rem;
+    left: 10rem;
+    position: absolute;
+    transform: rotate(-13deg);
+    z-index: 99;
+}
+.contact section:nth-child(1) div:nth-child(3) ul li:nth-child(1) {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: absolute;
+    left: 14rem;
+    top: 9.3rem;
+    border-radius: 3rem;
+    box-shadow: -1px -5px 1px black;
+    z-index: 9;
+}
+.contact section:nth-child(1) div:nth-child(3) ul li:nth-child(2) {
+    width: 2.3rem;
+    height: 2.3rem;
+    position: absolute;
+    left: 10.5rem;
+    top: 10rem;
+    border-radius: 3rem;
+    box-shadow: -1px -5px 1px black;
+    transform: rotate(-14deg);
+    z-index: 9;
+}
+
+.contact section:nth-child(2) div:nth-child(4) ul li:nth-child(1) {
+    z-index: 5;
+    top: 6rem;
+    left: 7.9rem;
+    border: 0.4rem solid rgba(255, 255, 255, 0.3);
+    border-top: 0;
+    border-right: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0 0 0 3rem;
+    position: absolute;
+    transform: rotate(195deg);
+    opacity: .5;
+}
+
+.contact section:nth-child(1) div:nth-child(4) ul li:nth-child(1) {
+    z-index: 9;
+    top: 6rem;
+    left: 14.5rem;
+    border: 0.4rem solid rgba(255, 255, 255, 0.3);
+    border-top: 0;
+    border-right: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 0 0 0 3rem;
+    position: absolute;
+    transform: rotate(190deg);
+    opacity: .5;
+}
+
+.contact section:nth-child(2) div:nth-child(5) ul li {
+    z-index: 6;
+    width: 1.2rem;
+    height: 1rem;
+    position: absolute;
+    top: 9.7rem;
+    left: 5.7rem;
+    box-shadow: -1px 5px black;
+    border-radius: 3rem;
+}
+
+.contact section:nth-child(1) div:nth-child(5) ul li {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: #cd253c;
+    position: absolute;
+    top: 10.9rem;
+    left: 12.9rem;
+    transition: .5s ease;
+    box-shadow: inset 1px 19px black;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    transform: rotate(-14deg);
+    z-index: 10;
+    animation: mouth-animation 4s infinite;
+}
