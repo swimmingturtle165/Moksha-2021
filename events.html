@@ -66,7 +66,7 @@
 <div class="container">
         <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="top-nav" style="">
           <div class="ground" style="display:flex; align-items:auto; flex-wrap: wrap;">
-              <img src="./logo2021/WhiteLogo1.png" alt="" style="
+              <img class="whitelogo" src="./logo2021/WhiteLogo1.png" alt="" style="
                   padding-left: 20px;
                   padding-right: 50px;
                   width: 25%;
@@ -78,7 +78,7 @@
           <!-- <h1 style="padding-left: 10%; "class="l-left"><a href="./index.html">Moksha NSUT</a></h1> -->
             
             <div class="navbar-header" style="margin-left:40vw;">
-          <span style="font-size:30px;cursor:pointer;color:white;padding-left:35%; right: 20px;" onclick="openNav()">☰</span>
+          <span class= "hamburger"style="font-size:30px;cursor:pointer;color:white;padding-left:-35%; right: 20px;" onclick="openNav()">☰</span>
         
   
 
@@ -97,12 +97,12 @@
             <li><a href="#daytwo">Day 2</a></li>
             <li><a href="#daythree">Day 3</a></li>
             <li><a href="./index.html">Home</a></li>
-      </ul>
+         </ul>
       
 
-        <!-- #Nav Ends -->
+          <!-- #Nav Ends -->
 
-    </div>
+       </div>
 
   </div>
 </div>
@@ -120,9 +120,31 @@
 
 @media (max-width: 600px) {
    .navbar-header {display: block !important; /* Show on Mobile */}
+   .whitelogo{
+     width: 50vw !important;
+     height: 100vh !important;
+   }
+   .hamburger{
+     margin-right: 0.5rem;
+      /* right: 10vw !important; */
+   }
+   .clearfix{
+      width: 95vw;
+      margin: 0.1vw;
+    }
 
    
 }
+@media (min-width: 600px) {
+   
+   .clearfix{
+      width: 94vw;
+      margin-left:5vw;
+    }
+
+   
+}
+
 
 </style>
 
@@ -252,10 +274,10 @@
     body {
       font-family: "Lato", sans-serif;
     }
-    .clearfix{
+    /* .clearfix{
       width: 95vw;
       margin: 0.1vw;
-    }
+    } */
     .sidenav {
       height: 100%;
       width: 0;
@@ -381,10 +403,6 @@
   
     <!-- Done Events -->
     <div id="entrybased" class=" clearfix grid">
-      <br></br>
-      <br></br>
-      <br></br>
-      <br></br>
 
       <h2 align=center style="color:BLACK">Entry Based Events  </h2>
       <!-- GET SET CREATE  -->
@@ -514,7 +532,6 @@
 
     <!-- 1st day -->
     <div id="dayone" class=" clearfix grid">
-      <br></br>
       <br></br>
       <br></br>
       <br></br>
@@ -669,7 +686,6 @@
     <!-- 2nd day -->
 
     <div id="daytwo" class=" clearfix grid justify-center"  >
-      <br></br>
       <br></br>
       <br></br>
       <br></br>
@@ -878,7 +894,6 @@
 
     <!-- 3rd day -->
     <div id="daythree" class=" clearfix grid">
-      <br></br>
       <br></br>
       <br></br>
       <br></br>
